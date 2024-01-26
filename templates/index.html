@@ -12,12 +12,22 @@
         <label for="user_input">User Input:</label>
         <input type="text" id="user_input" name="user_input" required>
         <input type="submit" value="Submit">
+        
     </form>
     {% if user_input %}
         <p>😮 {{ user_input }}</p>
     {% endif %}
     {% if bot_response %}
         <p class="bot">😎 {{ bot_response }} </p>
+        <p>
+            <audio controls>
+                <source src="{{ url_for('static', filename='speech.mp3') }}" type="audio/ogg">
+                
+              Your browser does not support the audio element.
+              </audio>
+        </p>
     {% endif %}
+
+    
 </body>
 </html>
